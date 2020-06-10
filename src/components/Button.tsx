@@ -1,23 +1,27 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 
 import IButtonProps from '../interfaces/IButtonProps';
 
 const Button = (props: IButtonProps) => (
-    <View style={[styles.container]}>
-        <Text>{props.text}</Text>
-    </View>
+    <TouchableOpacity style={[styles.container, { backgroundColor: props.color, flex: props.flex }]}>
+        <Text style={styles.text}>{props.text}</Text>
+    </TouchableOpacity>
 );
 
 const styles = StyleSheet.create({
     container: {
-        height: 100,
-        width: 100,
-        justifyContent: 'center'
+        height: 80,
+        width: 80,
+        justifyContent: 'center',
+        backgroundColor: '#fff',
+        margin: 5,
+        borderRadius: 100
     },
     text: {
-        color: '#fff',
-        fontSize: 25
+        color: '#000',
+        fontSize: 35,
+        alignSelf: 'center'
     }
 });
 
