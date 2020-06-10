@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import ButtonRow from './src/components/ButtonRow';
 import IButtonProps from './src/interfaces/IButtonProps';
+import Display from './src/components/Display';
 
 export default class App extends React.Component {
   createButtonRows() {
@@ -64,9 +65,7 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.display}>
-
-        </View>
+        <Display value={0} />
         {this.createButtonRows()}
       </View>
     );
@@ -77,10 +76,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#000'
-  },
-  display: {
-    backgroundColor: '#ff0000',
-    height: 250
   },
   buttons: {
     flex: 1,
