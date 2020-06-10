@@ -4,7 +4,8 @@ import { TouchableOpacity, Text, StyleSheet } from 'react-native';
 import IButtonProps from '../interfaces/IButtonProps';
 
 const Button = (props: IButtonProps) => (
-    <TouchableOpacity style={[styles.container, { backgroundColor: props.color, flex: props.flex }]}>
+    <TouchableOpacity style={[styles.container, { backgroundColor: props.color, flex: props.flex }]} 
+    onPress={() => alert('Valor: ' + props.value)}>
         <Text style={styles.text}>{props.text}</Text>
     </TouchableOpacity>
 );

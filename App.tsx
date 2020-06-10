@@ -5,7 +5,22 @@ import ButtonRow from './src/components/ButtonRow';
 import IButtonProps from './src/interfaces/IButtonProps';
 import Display from './src/components/Display';
 
-export default class App extends React.Component {
+interface IProps {
+}
+
+interface IState {
+  value: number | string
+}
+
+export default class App extends React.Component<IProps, IState> {
+  constructor(props: any) {
+    super(props);
+
+    this.state = {
+      value: 0
+    }
+  }
+
   createButtonRows() {
     let firstLine: Array<IButtonProps> = [
       { text: 'AC', color: '#d1cfcf', value: 'AC', flex: 1 },
@@ -60,6 +75,10 @@ export default class App extends React.Component {
         </View>
       </View>
     );
+  }
+
+  onButtonHandle(value: number | string) {
+    this.setState({ value });
   }
 
   render() {
